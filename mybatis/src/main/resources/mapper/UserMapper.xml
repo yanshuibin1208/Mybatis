@@ -17,4 +17,8 @@
         select * from t_student
     </select>
 
+    <update id="updateUser" parameterType="User">
+        UPDATE t_student set Sbirthday=#{sbirthday},Ssex=#{ssex} where Sid=#{sid}
+    </update>
+
 </mapper>
