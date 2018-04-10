@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- UserDao的映射文件，UserDao的实现-->
+<mapper namespace="com.newer.dao.UserDao">
+
+    <insert id="addUser" parameterType="User">
+        insert into t_student(Sname,Ssex,Sbirthday,Cid) VALUES (#{sname},#{ssex},#{sbirthday,jdbcType=DATE},#{cid})
+    </insert>
+
+    <select id="findById" resultType="User">
+        select * from t_student where Sid=#{sid}
+    </select>
+
+    <select id="findAll" resultType="User">
+        select * from t_student
+    </select>
+
+</mapper>
