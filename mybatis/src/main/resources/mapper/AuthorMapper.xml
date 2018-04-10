@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- AuthorDao的映射文件，AuthorDao的实现-->
+<mapper namespace="com.newer.dao.AuthorDao">
+    <insert id="addAuthor" parameterType="Author">
+        INSERT INTO author(name,sex,birthday,address,phone) VALUES
+        (#{name},#{sex},#{birthday,jdbcType=VARCHAR},#{address,jdbcType=VARCHAR},#{phone,jdbcType=VARCHAR})
+    </insert>
+
+    <select id="findById" resultType="Author">
+        select * from author where id=#{id}
+    </select>
+
+    <select id="findAll" resultType="Author">
+        select * from author
+    </select>
+
+    <delete id="deleteAuthor" parameterType="Author">
+        DELETE from author where id=#{id}
+    </delete>
+
+    <update id="updateAuthor" parameterType="Author">
+        update author set birthday=#{birthday},phone=#{phone},address=#{address} where id=#{id}
+    </update>
+</mapper>
